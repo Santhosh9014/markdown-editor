@@ -1,0 +1,323 @@
+/* Main layout styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Karla', sans-serif;
+}
+
+button:focus {
+  outline: none;
+}
+
+.split {
+  display: flex;
+  height: 100vh;
+}
+
+.pane {
+  overflow-y: auto;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 20%;
+  height: 100vh;
+  background-color: whitesmoke;
+  padding: 0;
+}
+
+.sidebar--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #4A4E74;
+  color: white;
+}
+
+.sidebar--header > h3 {
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.new-note {
+  cursor: pointer;
+  background-color: #4A4E74;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+}
+
+.new-note:hover {
+  background-color: #3d4063;
+}
+
+.first-note {
+  cursor: pointer;
+  background-color: #4A4E74;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.first-note:hover {
+  background-color: #3d4063;
+}
+
+/* Note title styles */
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin: 0;
+  border-bottom: 1px solid #dddddd;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+.title:hover {
+  background-color: #f0f0f0;
+}
+
+.selected-note {
+  background-color: #4A4E74;
+  color: white;
+}
+
+.selected-note:hover {
+  background-color: #3d4063;
+}
+
+.text-snippet {
+  padding-right: 8px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 30px);
+  margin: 0;
+}
+
+/* Delete button styles */
+.delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  padding: 4px;
+  margin-left: 8px;
+  border-radius: 3px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.title:hover .delete-btn {
+  opacity: 1;
+}
+
+.delete-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.selected-note .delete-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Trash icon styles */
+.gg-trash {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 10px;
+  height: 12px;
+  border: 2px solid;
+  border-radius: 1px;
+  margin-top: 3px;
+  color: inherit;
+}
+
+.gg-trash::after,
+.gg-trash::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.gg-trash::after {
+  background: currentColor;
+  border-radius: 3px;
+  width: 16px;
+  height: 2px;
+  top: -4px;
+  left: -5px;
+}
+
+.gg-trash::before {
+  width: 10px;
+  height: 4px;
+  border: 2px solid;
+  border-bottom: transparent;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  top: -7px;
+  left: -2px;
+}
+
+/* Editor styles */
+.editor {
+  width: 80%;
+  height: 100vh;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.no-notes {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  gap: 2rem;
+}
+
+.no-notes h1 {
+  font-size: 2rem;
+  color: #4A4E74;
+}
+
+/* Markdown Editor specific styles */
+.md-editor {
+  margin: 0;
+  border: none;
+}
+
+.w-md-editor {
+  background-color: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 5px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+.w-md-editor-text-pre > code,
+.w-md-editor-text-input {
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  font-family: 'Monaco', 'Menlo', monospace !important;
+  padding: 12px !important;
+}
+
+.w-md-editor-toolbar {
+  background-color: #f6f6f6 !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  padding: 8px !important;
+}
+
+.w-md-editor-toolbar ul li button {
+  color: #444444 !important;
+  font-size: 1rem !important;
+  padding: 6px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+}
+
+.w-md-editor-toolbar ul li button:hover {
+  background-color: #e0e0e0 !important;
+}
+
+.wmde-markdown {
+  background: #ffffff !important;
+  padding: 24px !important;
+  font-family: 'Karla', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+}
+
+/* Split pane drag handle */
+.gutter {
+  background-color: #e0e0e0;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter:hover {
+  background-color: #c1c1c1;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+  cursor: col-resize;
+  width: 10px !important;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  .sidebar {
+      background-color: #1e1e1e;
+  }
+
+  .title {
+      background-color: #2d2d2d;
+      border-bottom-color: #404040;
+      color: #ffffff;
+  }
+
+  .title:hover {
+      background-color: #353535;
+  }
+
+  .selected-note {
+      background-color: #4A4E74;
+  }
+
+  .w-md-editor {
+      background-color: #1e1e1e !important;
+      border-color: #404040 !important;
+  }
+  
+  .w-md-editor-toolbar {
+      background-color: #2d2d2d !important;
+      border-bottom-color: #404040 !important;
+  }
+  
+  .w-md-editor-toolbar ul li button {
+      color: #ffffff !important;
+  }
+  
+  .w-md-editor-toolbar ul li button:hover {
+      background-color: #404040 !important;
+  }
+  
+  .wmde-markdown {
+      background: #1e1e1e !important;
+      color: #ffffff !important;
+  }
+
+  .gutter {
+      background-color: #2d2d2d;
+  }
+
+  .gutter:hover {
+      background-color: #404040;
+  }
+}
