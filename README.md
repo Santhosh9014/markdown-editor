@@ -20,7 +20,7 @@ This is a simple note-taking application built with React that allows you to cre
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/your-username/markdown-note-taking-app.git`
+1. Clone the repository: `git clone https://github.com/Santhosh9014/markdown-note-taking-app.git`
 2. Install the dependencies: `cd markdown-note-taking-app && npm install`
 3. Start the development server: `npm run dev`
 4. Open your browser and visit `http://localhost:5173` to see the app.
@@ -28,7 +28,3 @@ This is a simple note-taking application built with React that allows you to cre
 ## Contributing
 
 Contributions are welcome! If you find any issues or have ideas for improvements, please feel free to create a new issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
